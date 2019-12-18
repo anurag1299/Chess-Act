@@ -2,7 +2,7 @@ import Piece from './piece.js'
 
 export default class Bishop extends Piece{
     constructor(player){
-        super(player, (player === 1? "https://img.icons8.com/ios/50/000000/bishop.png" : "https://img.icons8.com/ios-filled/50/000000/bishop.png"))
+        super(player, (player === 1? "https://img.icons8.com/ios/40/000000/bishop.png" : "https://img.icons8.com/ios-filled/40/000000/bishop.png"))
     }
 
     isMovePossible(src, dest){

@@ -10,8 +10,8 @@ export default function initialiseChessBoard(){
     const squares = Array(64).fill(null)
 
     for(let i =0 ; i< 8; i++){
-        squares[i] = new Pawn(2)
-        squares[i+40] = new Pawn(1);
+        squares[i+8] = new Pawn(2)
+        squares[i+48] = new Pawn(1);
     }
 
     squares[0] = new Rook(2)
@@ -24,7 +24,7 @@ export default function initialiseChessBoard(){
     squares[57] = new Knight(1)
     squares[62] = new Knight(1)
 
-    squares[3] = new Bishop(2)
+    squares[2] = new Bishop(2)
     squares[5] = new Bishop(2)
     squares[58] = new Bishop(1)
     squares[61] = new Bishop(1)

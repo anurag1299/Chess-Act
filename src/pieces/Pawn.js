@@ -2,7 +2,7 @@ import Piece from "./piece.js"
 
 export default class Pawn extends Piece {
     constructor(player){
-        super(player, (player === 1? "https://img.icons8.com/ios/48/000000/pawn.png" : "https://img.icons8.com/ios-filled/50/000000/pawn.png"))
+        super(player, (player === 1? "https://img.icons8.com/ios/40/000000/pawn.png" : "https://img.icons8.com/ios-filled/40/000000/pawn.png"))
         this.initialPositions = {
             1: [48,49,50,51,52,53,54,55],
             2: [8,9,10,11,12,13,14,15]
