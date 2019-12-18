@@ -109,18 +109,15 @@ class game extends Component {
     
     render() {
         return (
-            <div>
+            <div >
+                <div className="main">
+                <h1 className="title">***CHESS-ACT***</h1>
                 <div className="game">
                     <div className='game-board'>
                         <Board
                         squares = {this.state.squares}
                         onClick = {(i) => this.handleClick(i)} 
                         />
-                    </div>
-                    <div className="game-info">
-                        <h3>Turn</h3>
-                        <div id="player-turn-box" style={{backgroundColor: this.state.turn}}></div>
-                        <div className="game-status">{this.state.status}</div>
                         <div className="fallen-soldier-block">
                             {<FallenSoldierBlock
                             whiteFallenSoldier = {this.state.whiteFallenSoldier}
@@ -128,10 +125,16 @@ class game extends Component {
                             />}
                         </div>
                     </div>
+                    <div className="game-info">
+                        <h3>Turn</h3>
+                        <div id="player-turn-box" style={{backgroundColor: this.state.turn}}></div>
+                        <div className="game-status">{this.state.status}</div>
+                        
+                    </div>
 
                 </div>
 
-                
+                </div>
             </div>
         )
     }
