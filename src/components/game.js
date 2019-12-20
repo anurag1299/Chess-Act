@@ -131,7 +131,13 @@ class game extends Component {
     }
 
     timeTravel = () =>{
-        console.log("hi")
+        // console.log("hi")
+        let tempStep = this.state.step
+        let lastStep = tempStep.pop()
+        this.setState({
+            ...lastStep,
+            tempStep
+        })
     }
     
     render() {
