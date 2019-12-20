@@ -7,10 +7,12 @@ import initialiseChessBoard from '../helper/initialise.js'
 
 
 class game extends Component {
+    
     constructor() {
         super()
-    
+       
         this.state = {
+             step: [],
              squares: initialiseChessBoard(),
              whiteFallenSoldier: [],
              blackFallenSoldier: [],
@@ -83,6 +85,7 @@ class game extends Component {
                         status: '',
                         turn : turn
                     })
+                    this.updateStep()
                 }
                 else{
                     this.setState({
@@ -92,9 +95,20 @@ class game extends Component {
                 }
             }
 
-        }
 
+        }
         
+        
+    }
+
+    updateStep = () => {
+        const prevState = {...this.state}
+        delete prevState.step
+        this.setState({
+            step: [...this.state.step, prevState]
+
+        })
+        console.log(this.state)
     }
 
     isMoveLegal = (srcToDestPath) => {
@@ -105,6 +119,19 @@ class game extends Component {
             }
         }
         return isLegal
+    }
+
+    componentDidMount(){
+        // localStorage.setItem('step'+this.state.step, JSON.stringify(this.state))
+        const prevState = {...this.state}
+        delete prevState.step
+        this.setState({
+            step: [...this.state.step, prevState]
+        })
+    }
+
+    timeTravel = () =>{
+        console.log("hi")
     }
     
     render() {
@@ -124,6 +151,7 @@ class game extends Component {
                             blackFallenSoldier = {this.state.blackFallenSoldier} 
                             />}
                         </div>
+                        <button onClick={this.timeTravel}>Undo</button>
                     </div>
                     <div className="game-info">
                         <h3>Turn</h3>
@@ -131,6 +159,7 @@ class game extends Component {
                         <div className="game-status">{this.state.status}</div>
                         
                     </div>
+                    
 
                 </div>
 
