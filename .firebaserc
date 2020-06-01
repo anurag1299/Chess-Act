@@ -1,5 +1,6 @@
 {
   "projects": {
-    "Chess-Act": "chess-act"
+    "Chess-Act": "chess-act",
+    "default": "chess-act"
   }
 }
